@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-
+//https://stackoverflow.com/questions/34360883/change-the-colors-of-different-buttons-randomly-at-a-specified-time
 class MainActivity : AppCompatActivity() {
 
      var scoreValue:Int =0
@@ -32,22 +32,18 @@ class MainActivity : AppCompatActivity() {
         changingButtons[3] = split4
 
         split1?.setOnClickListener {
-            if(!isClicked)
                 checkViewBackgroudColor(split1)
         }
 
         split2?.setOnClickListener {
-            if(!isClicked)
                 checkViewBackgroudColor(split2)
         }
 
         split3?.setOnClickListener {
-            if(!isClicked)
                 checkViewBackgroudColor(split3)
         }
 
         split4?.setOnClickListener {
-            if(!isClicked)
                 checkViewBackgroudColor(split4)
         }
 
@@ -106,7 +102,7 @@ class MainActivity : AppCompatActivity() {
             isClicked=true
             setScoreText(++scoreValue)
         }
-        else if(isClicked){
+        else if(isClicked && color==Color.parseColor("#C0C0C0") ){
 
         }
         else {
