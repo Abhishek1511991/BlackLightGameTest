@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/scopecard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Hello World!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/split1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FF6347"
+        app:layout_constraintBottom_toTopOf="@+id/split3"
+        app:layout_constraintEnd_toStartOf="@+id/split2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scopecard"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:text="A" />
+
+    <TextView
+        android:id="@+id/split2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textStyle="bold"
+        android:background="#5C5CFF"
+        app:layout_constraintBottom_toTopOf="@+id/split4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/split1"
+        app:layout_constraintTop_toBottomOf="@+id/scopecard"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="B" />
+
+    <TextView
+        android:id="@+id/split3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFD700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/split4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/split1"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:text="C" />
+
+    <TextView
+        android:id="@+id/split4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00A300"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/split3"
+        app:layout_constraintTop_toBottomOf="@+id/split2"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="D" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
