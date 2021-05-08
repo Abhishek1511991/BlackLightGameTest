@@ -1,5 +1,8 @@
 # BlackLightGameTest
 
+![GitHub Logo](https://lh3.googleusercontent.com/Jopej4VW1EXFJtEDcUW6T95Cde_oZqw7yW9IU3xn42gSZg2RA14Wsyr_DAMer5qw0glG-w=s85)
+
+
 Screen Elements:
 1. Top bar to show the current game score
 2. Rest of the screen is filled with 4 equal rectangular box colored in Red, Blue, Yellow and
