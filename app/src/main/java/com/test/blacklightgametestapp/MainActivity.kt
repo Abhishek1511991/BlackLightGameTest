@@ -137,4 +137,35 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    fun exitAlert()
+    {
+        timer?.purge()
+        timer?.cancel()
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Currently game is running, Are you want to exit game or play continue?")
+        builder.setMessage("Your score is: $scoreValue")
+
+        builder.setPositiveButton("Resume") { dialog, which ->
+            setScoreText(scoreValue)
+            startGame()
+            Toast.makeText(this,"Game Resume",Toast.LENGTH_SHORT).show()
+        }
+
+        builder.setNegativeButton("Exit") { dialog, which ->
+            Toast.makeText(this.applicationContext,"Thanks for playing game",Toast.LENGTH_SHORT).show()
+            finish()
+        }
+        val dialog=builder.create()
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.setCancelable(false)
+        dialog.show()
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        exitAlert()
+    }
+
+
 }
