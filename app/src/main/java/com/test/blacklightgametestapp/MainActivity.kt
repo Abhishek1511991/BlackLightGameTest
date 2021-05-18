@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
      lateinit var changingButtons: Array<TextView?>
      var timer:Timer?=null
      var isClicked:Boolean=false
+     var previousPosition=0;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,20 +74,42 @@ class MainActivity : AppCompatActivity() {
             if (background is ColorDrawable)
                 color = background.color
 
+            retryColorChange(randomViewPos,color)
 
-            changingButtons[randomViewPos]?.setBackgroundColor(Color.parseColor("#C0C0C0"))
-            changingButtons[randomViewPos]?.postDelayed(object:Runnable
-            {
-                override fun run() {
-                    changingButtons[randomViewPos]?.setBackgroundColor(color)
-                    if(!activity.isClicked)
-                        activity.gameOverAlert()
-                    else
-                        activity.isClicked=false
-                }
-
-            },1000)
         }
+
+
+        fun retryColorChange(randomViewPos:Int,color:Int)
+        {
+            if(randomViewPos==activity.previousPosition)
+            {
+                val randomViewPos1 = Random().nextInt(4)
+                var color1 = Color.TRANSPARENT
+                val background = changingButtons[randomViewPos1]?.background
+                if (background is ColorDrawable)
+                    color1 = background.color
+
+                retryColorChange(randomViewPos1,color1)
+            }
+            else
+            {
+                activity.previousPosition=randomViewPos
+                changingButtons[randomViewPos]?.setBackgroundColor(Color.parseColor("#C0C0C0"))
+                changingButtons[randomViewPos]?.postDelayed(object:Runnable
+                {
+                    override fun run() {
+                        changingButtons[randomViewPos]?.setBackgroundColor(color)
+                        if(!activity.isClicked)
+                            activity.gameOverAlert()
+                        else
+                            activity.isClicked=false
+                    }
+
+                },1000)
+            }
+        }
+
+
 
     }
 
